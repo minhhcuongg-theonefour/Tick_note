@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Excercises/Android/Tick/app/src/main/res/drawable/background_note.xml" value="0.1845" />
         <entry key="..\:/Excercises/Android/Tick/app/src/main/res/layout/activity_create_note.xml" value="0.25" />
         <entry key="..\:/Excercises/Android/Tick/app/src/main/res/layout/activity_main.xml" value="0.2359375" />
+        <entry key="..\:/Excercises/Android/Tick/app/src/main/res/layout/item_container_note.xml" value="0.25" />
       </map>
     </option>
   </component>

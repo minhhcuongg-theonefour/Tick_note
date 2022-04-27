@@ -36,6 +36,7 @@ public class CreateNoteActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) { onBackPressed(); }
         });
+
         inputNoteTitle = findViewById(R.id.inputNoteTitle);
         inputNoteSubtitle = findViewById(R.id.inputNoteSubtitle);
         inputNoteText = findViewById(R.id.inputNoteText);
