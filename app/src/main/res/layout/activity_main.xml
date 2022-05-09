@@ -54,7 +54,7 @@
             android:importantForAutofill="no"
             android:inputType="text"
             android:textColor="@color/colorWhiteTextColor"
-            android:textColorHint="@color/colorTextHint"
+            android:textColorHint="#9E9E9E"
             android:textSize="@dimen/_13ssp"
             tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>

@@ -46,11 +46,13 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteViewHold
 
     @Override
     public int getItemCount() {
+
         return notes.size();
     }
 
     @Override
     public int getItemViewType(int position) {
+
         return position;
     }
 
@@ -76,19 +78,19 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteViewHold
             }
             textDateTime.setText(note.getDateTime());
 
-            GradientDrawable gradientDrawable = (GradientDrawable) layoutNote.getBackground();
-            if (note.getColor() != null) {
-                gradientDrawable.setColor(Color.parseColor(note.getColor()));
-            } else {
-                gradientDrawable.setColor(Color.parseColor("#333333"));
-            }
-
-            if (note.getImagePath() != null) {
-                imageNote.setImageBitmap(BitmapFactory.decodeFile(note.getImagePath()));
-                imageNote.setVisibility(View.VISIBLE);
-            } else {
-                imageNote.setVisibility(View.GONE);
-            }
+//            GradientDrawable gradientDrawable = (GradientDrawable) layoutNote.getBackground();
+//            if (note.getColor() != null) {
+//                gradientDrawable.setColor(Color.parseColor(note.getColor()));
+//            } else {
+//                gradientDrawable.setColor(Color.parseColor("#333333"));
+//            }
+//
+//            if (note.getImagePath() != null) {
+//                imageNote.setImageBitmap(BitmapFactory.decodeFile(note.getImagePath()));
+//                imageNote.setVisibility(View.VISIBLE);
+//            } else {
+//                imageNote.setVisibility(View.GONE);
+//            }
         }
     }
 }
