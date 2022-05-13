@@ -394,7 +394,6 @@ public class CreateNoteActivity extends AppCompatActivity {
         dialogDeleteNote.show();
     }
 
-
     private void setSubtitleIndicatorColor() {
         GradientDrawable gradientDrawable = (GradientDrawable) viewSubtitleIndicator.getBackground();
         gradientDrawable.setColor(Color.parseColor(selectedNoteColor));
@@ -433,7 +432,12 @@ public class CreateNoteActivity extends AppCompatActivity {
                         imageNote.setImageBitmap(bitmap);
                         findViewById(R.id.imageRemoveImage).setVisibility(View.VISIBLE);
 
+//                        Glide.with(CreateNoteActivity.this)
+//                                .load(selectedImageUri)
+//                                .into(imageNote);
+
                         imageNote.setVisibility(View.VISIBLE);
+//                        findViewById(R.id.imageRemoveImage).setVisibility(View.VISIBLE);
                         selectedImagePath = getPathFromUri(selectedImageUri);
                     } catch (Exception e) {
                         Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
