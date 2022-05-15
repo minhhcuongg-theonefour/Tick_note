@@ -19,6 +19,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.os.Bundle;
@@ -38,6 +39,7 @@ import com.android.tick.entities.Note;
 import com.bumptech.glide.Glide;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
+import java.io.File;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -211,7 +213,7 @@ public class CreateNoteActivity extends AppCompatActivity {
         new SaveNoteTask().execute();
     }
 
-    private void initMiscellaneous(){
+    private void initMiscellaneous() {
         final LinearLayout layoutMiscellaneous = findViewById(R.id.layoutMiscellaneous);
         final BottomSheetBehavior<LinearLayout> bottomSheetBehavior = BottomSheetBehavior.from(layoutMiscellaneous);
         layoutMiscellaneous.findViewById(R.id.textMiscellaneous).setOnClickListener(new View.OnClickListener() {
@@ -306,20 +308,24 @@ public class CreateNoteActivity extends AppCompatActivity {
 
         layoutMiscellaneous.findViewById(R.id.layoutAddImage).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-                if (ContextCompat.checkSelfPermission(
-                        getApplicationContext(), Manifest.permission.READ_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED)
-                {
-                    ActivityCompat.requestPermissions(CreateNoteActivity.this,
-                            new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+            public void onClick(View view) {
+                bottomSheetBehavior.setState(bottomSheetBehavior.STATE_COLLAPSED);
+                if(ContextCompat.checkSelfPermission(
+                        getApplicationContext(), Manifest.permission.READ_EXTERNAL_STORAGE
+                ) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(
+                            CreateNoteActivity.this,
+                            new String[] {Manifest.permission.READ_EXTERNAL_STORAGE},
                             REQUEST_CODE_STORAGE_PERMISSION
                     );
-                } else {
+                }else{
                     selectImage();
                 }
             }
         });
+
+
+
 
         layoutMiscellaneous.findViewById(R.id.layoutAddUrl).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -402,6 +408,7 @@ public class CreateNoteActivity extends AppCompatActivity {
 
     private void selectImage() {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        System.out.println(intent.resolveActivity(getPackageManager()));
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(intent, REQUEST_CODE_SELECT_IMAGE);
         }
@@ -432,12 +439,12 @@ public class CreateNoteActivity extends AppCompatActivity {
                         imageNote.setImageBitmap(bitmap);
                         findViewById(R.id.imageRemoveImage).setVisibility(View.VISIBLE);
 
-//                        Glide.with(CreateNoteActivity.this)
-//                                .load(selectedImageUri)
-//                                .into(imageNote);
+                        Glide.with(CreateNoteActivity.this)
+                                .load(selectedImageUri)
+                                .into(imageNote);
 
                         imageNote.setVisibility(View.VISIBLE);
-//                        findViewById(R.id.imageRemoveImage).setVisibility(View.VISIBLE);
+                        findViewById(R.id.imageRemoveImage).setVisibility(View.VISIBLE);
                         selectedImagePath = getPathFromUri(selectedImageUri);
                     } catch (Exception e) {
                         Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
