@@ -142,6 +142,9 @@ public class MainActivity extends AppCompatActivity implements NotesListeners {
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(intent, REQUEST_CODE_SELECT_IMAGE);
         }
+        else{
+            startActivityForResult(intent, REQUEST_CODE_SELECT_IMAGE);
+        }
     }
 
     @Override
