@@ -185,7 +185,6 @@ public class MainActivity extends AppCompatActivity implements NotesListeners {
 
     private void getNotes(final int requestCode, final boolean isNoteDeleted) {
 
-        @SuppressLint("StaticFieldLeak")
         class GetNotesTask extends AsyncTask<Void, Void, List<Note>> {
             @Override
             protected List<Note> doInBackground(Void... voids) {

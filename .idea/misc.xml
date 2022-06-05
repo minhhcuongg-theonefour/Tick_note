@@ -12,10 +12,13 @@
         <entry key="..\:/Excercises/Android/Tick/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Excercises/Android/Tick/app/src/main/res/drawable/test.xml" value="0.1655" />
         <entry key="..\:/Excercises/Android/Tick/app/src/main/res/layout/activity_create_note.xml" value="0.176" />
+        <entry key="..\:/Excercises/Android/Tick/app/src/main/res/layout/activity_login.xml" value="0.10989583333333333" />
         <entry key="..\:/Excercises/Android/Tick/app/src/main/res/layout/activity_main.xml" value="0.2359375" />
+        <entry key="..\:/Excercises/Android/Tick/app/src/main/res/layout/activity_sign_up.xml" value="0.10989583333333333" />
         <entry key="..\:/Excercises/Android/Tick/app/src/main/res/layout/item_container_note.xml" value="0.25" />
         <entry key="..\:/Excercises/Android/Tick/app/src/main/res/layout/layout_add_url.xml" value="0.25" />
         <entry key="..\:/Excercises/Android/Tick/app/src/main/res/layout/layout_delete_note.xml" value="0.264" />
+        <entry key="..\:/Excercises/Android/Tick/app/src/main/res/layout/layout_log_out.xml" value="0.10989583333333333" />
         <entry key="..\:/Excercises/Android/Tick/app/src/main/res/layout/layout_miscellaneous.xml" value="0.1760299625468165" />
         <entry key="..\:/Excercises/Android/Tick/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.121" />
         <entry key="..\:/Hoc_tap/didong/Project/De_tai_8_Nhom2_Tick_note/app/src/main/res/drawable/background_delete.xml" value="0.143" />

@@ -13,13 +13,25 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_12sdp"
         android:layout_marginTop="@dimen/_20sdp"
-        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_150sdp"
         android:fontFamily="@font/ubuntu_bold"
         android:includeFontPadding="false"
         android:text="@string/activity_main_text_my_note_text"
         android:textColor="@color/white"
         android:textSize="@dimen/_20ssp"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/logout"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/log_out"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.927"
+        app:layout_constraintStart_toEndOf="@+id/textMyNotes"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/colorIcons"/>
 
     <LinearLayout
         android:id="@+id/layoutSearch"
