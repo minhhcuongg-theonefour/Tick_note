@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements NotesListeners {
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         if(account!=null)
         {
-            String username = account.getEmail();
+            String username = account.getDisplayName();
             mynote.setText(username);
         }
 

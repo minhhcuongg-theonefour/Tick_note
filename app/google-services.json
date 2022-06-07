@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "155242783776",
+    "firebase_url": "https://ticksecond-43d43-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "ticksecond-43d43",
     "storage_bucket": "ticksecond-43d43.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "155242783776-k7223pi2qg703qppkg9ujjngml7k7f56.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tick.android.abc",
+            "certificate_hash": "74f0801650eb839f70ec931a70649ab67c05b9be"
+          }
+        },
         {
           "client_id": "155242783776-ga9c62nlda633kgt2m3a4aa0nm9jcmvc.apps.googleusercontent.com",
           "client_type": 3
