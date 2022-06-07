@@ -28,6 +28,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.tick.R;
@@ -36,6 +37,12 @@ import com.android.tick.adapters.NotesAdapter;
 import com.android.tick.database.NoteDatabase;
 import com.android.tick.entities.Note;
 import com.android.tick.listeners.NotesListeners;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,15 +58,39 @@ public class MainActivity extends AppCompatActivity implements NotesListeners {
     private RecyclerView notesRecyclerView;
     private List<Note> noteList;
     private NotesAdapter notesAdapter;
+    private ImageView logout;
+    private TextView mynote;
 
     private int noteClickedPosition = -1;
 
     private AlertDialog dialogAddURL;
 
+    GoogleSignInOptions gso;
+    GoogleSignInClient gsc;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mynote  = findViewById(R.id.textMyNotes);
+        logout = findViewById(R.id.logout);
+        gso     = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
+        gsc     = GoogleSignIn.getClient(MainActivity.this, gso);
+
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+        if(account!=null)
+        {
+            String username = account.getEmail();
+            mynote.setText(username);
+        }
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signOut();
+            }
+        });
 
         ImageView imageAddNoteMain = findViewById(R.id.imageAddNoteMain);
         imageAddNoteMain.setOnClickListener(new View.OnClickListener() {
@@ -136,6 +167,17 @@ public class MainActivity extends AppCompatActivity implements NotesListeners {
             }
         });
     }
+
+    void signOut() {
+        gsc.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(Task<Void> task) {
+                finish();
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            }
+        });
+    }
+
 
     private void selectImage() {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);

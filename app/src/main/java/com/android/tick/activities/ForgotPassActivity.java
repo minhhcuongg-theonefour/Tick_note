@@ -14,6 +14,7 @@ import androidx.appcompat.widget.AppCompatButton;
 
 import com.android.tick.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -40,8 +41,6 @@ public class ForgotPassActivity extends AppCompatActivity {
                 resetPassWord();
             }
         });
-
-
 
     }
 
@@ -76,7 +75,12 @@ public class ForgotPassActivity extends AppCompatActivity {
         }).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
-                System.out.println("successed");
+                System.out.println("Successed");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                System.out.println("Failed");
             }
         });
     }

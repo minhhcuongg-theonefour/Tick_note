@@ -116,10 +116,9 @@ public class LoginActivity extends AppCompatActivity{
             try {
                 task.getResult(ApiException.class);
                 loginUserWithGG();
-            }
-            catch (ApiException e){
+            } catch (ApiException e) {
                 e.printStackTrace();
-                Toast.makeText(getApplicationContext(), "Somthing went wrong", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Something went wrong", Toast.LENGTH_SHORT).show();
             }
         }
     }
