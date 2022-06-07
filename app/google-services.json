@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "155242783776",
+    "project_id": "ticksecond-43d43",
+    "storage_bucket": "ticksecond-43d43.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:155242783776:android:c9f2baf452924f8f1c4845",
+        "android_client_info": {
+          "package_name": "com.tick.android.abc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "155242783776-ga9c62nlda633kgt2m3a4aa0nm9jcmvc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVvaK4cqwE7KA2BYu0ntxqbGLzVvlHmLs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "155242783776-ga9c62nlda633kgt2m3a4aa0nm9jcmvc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
