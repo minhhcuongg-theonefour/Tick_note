@@ -88,8 +88,8 @@ public class RegisterActivity extends AppCompatActivity{
             return;
         }
 
-        if (pw.length() < 4) {
-            getPw.setError("Password require more than 4 characters");
+        if (pw.length() < 6) {
+            getPw.setError("Password require more than 6 characters");
             getPw.requestFocus();
             return;
         }
