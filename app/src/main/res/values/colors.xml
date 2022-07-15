@@ -7,7 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="greentheme">#157A4C</color>
+    <color name="lightdark">#333333</color>
+    <color name="alarmcolor">#95CD41</color>
 
+    <color name="fg_pass">#C9C9C9</color>
+    <color name="title_txt">#9B9B9B</color>
     <color name="colorPrimary">#292929</color>
     <color name="colorAccent">#FDBE38</color>
     <color name="colorWhiteTextColor">#FFFFFF</color>
